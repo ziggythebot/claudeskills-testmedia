@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides - Claude Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sys-meta top-left">
+        <span>DOCUMENTATION</span>
+        <span class="blink">● ACTIVE</span>
+    </div>
+    <div class="sys-meta top-right">
+        <span>v1.0.0</span>
+        <span>GUIDES</span>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">CLAUDE SKILLS</a>
+            <nav>
+                <a href="index.html#marketplace">Marketplace</a>
+                <a href="guides.html" class="active">Guides</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="https://github.com/ziggythebot" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="eyebrow">— DOCUMENTATION</div>
+            <h1>
+                <span>LEARN TO BUILD</span>
+                <span class="outline">AUTONOMOUS AI</span>
+            </h1>
+            <p class="subhead">Step-by-step guides to master Claude Skills — from setup to advanced automation.</p>
+        </div>
+    </section>
+
+    <section class="guides-content">
+        <div class="container">
+            <div class="guides-grid-full">
+                <!-- Guide 1 -->
+                <article class="guide-full">
+                    <div class="guide-meta">
+                        <span class="tag">TUTORIAL</span>
+                        <span class="read-time">5 min read</span>
+                    </div>
+                    <h2>Getting Started with GhostClaw</h2>
+                    <div class="guide-body">
+                        <h3>Installation</h3>
+                        <div class="code-snippet">
+                            <code>git clone https://github.com/your/ghostclaw.git
+cd ghostclaw
+npm install
+npm run dev</code>
+                        </div>
+
+                        <h3>First-Time Setup</h3>
+                        <p>Run the setup skill to build your AI personality:</p>
+                        <div class="code-snippet">
+                            <code>/setup-ghostclaw</code>
+                        </div>
+                        <p>This guides you through:</p>
+                        <ul>
+                            <li>WhatsApp/Telegram authentication</li>
+                            <li>Personality building (soul generation)</li>
+                            <li>Channel registration</li>
+                            <li>Service configuration</li>
+                        </ul>
+
+                        <h3>Add Your First Skill</h3>
+                        <p>Try voice transcription:</p>
+                        <div class="code-snippet">
+                            <code>/add-voice-transcription</code>
+                        </div>
+                        <p>You'll need an ElevenLabs API key. The skill will guide you through setup.</p>
+
+                        <h3>Test It Out</h3>
+                        <p>Send a voice note to your WhatsApp/Telegram bot. It should transcribe automatically.</p>
+                    </div>
+                    <div class="guide-footer">
+                        <a href="#" class="guide-link">View on GitHub →</a>
+                    </div>
+                </article>
+
+                <!-- Guide 2 -->
+                <article class="guide-full">
+                    <div class="guide-meta">
+                        <span class="tag">TUTORIAL</span>
+                        <span class="read-time">10 min read</span>
+                    </div>
+                    <h2>Creating Your First Skill</h2>
+                    <div class="guide-body">
+                        <h3>Skill Structure</h3>
+                        <p>Skills are folders with two files:</p>
+                        <div class="code-snippet">
+                            <code>.claude/skills/my-skill/
+  ├── skill.json        # Metadata
+  └── prompt.md         # Instructions for Claude</code>
+                        </div>
+
+                        <h3>1. Create skill.json</h3>
+                        <div class="code-snippet">
+                            <code>{
+  "name": "my-skill",
+  "description": "What this skill does",
+  "triggers": ["my-skill", "trigger phrase"],
+  "version": "1.0.0",
+  "author": "You",
+  "tags": ["category"]
+}</code>
+                        </div>
+
+                        <h3>2. Write prompt.md</h3>
+                        <p>This teaches Claude what to do:</p>
+                        <div class="code-snippet">
+                            <code># /my-skill - Short Description
+
+## What This Does
+Clear explanation of the skill's purpose.
+
+## Workflow
+Step 1: First action
+Step 2: Second action
+Step 3: Result
+
+## Example
+User: /my-skill
+Agent: [Does the thing]</code>
+                        </div>
+
+                        <h3>3. Test It</h3>
+                        <p>Run the skill in your chat:</p>
+                        <div class="code-snippet">
+                            <code>/my-skill</code>
+                        </div>
+
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>Keep prompt.md under 500 lines</li>
+                            <li>Use clear section headers</li>
+                            <li>Include examples</li>
+                            <li>Document required API keys</li>
+                            <li>Test edge cases</li>
+                        </ul>
+                    </div>
+                    <div class="guide-footer">
+                        <a href="#" class="guide-link">Example skills →</a>
+                    </div>
+                </article>
+
+                <!-- Guide 3 -->
+                <article class="guide-full">
+                    <div class="guide-meta">
+                        <span class="tag">ADVANCED</span>
+                        <span class="read-time">15 min read</span>
+                    </div>
+                    <h2>Autonomous Workflows with Ralph</h2>
+                    <div class="guide-body">
+                        <h3>What is Ralph?</h3>
+                        <p>Ralph is a task loop that runs overnight, completing checklists autonomously. Each task runs in a fresh context window with commits after each step.</p>
+
+                        <h3>Create a Task File</h3>
+                        <p>Make a markdown file with checkboxes:</p>
+                        <div class="code-snippet">
+                            <code># Project Tasks
+
+- [ ] Create user model
+- [ ] Add login endpoint
+- [ ] Add registration endpoint
+- [ ] Write tests
+- [ ] Deploy to staging</code>
+                        </div>
+
+                        <h3>Start Ralph</h3>
+                        <div class="code-snippet">
+                            <code>/run-ralph tasks.md</code>
+                        </div>
+
+                        <h3>How It Works</h3>
+                        <ol>
+                            <li>Reads task file, finds first unchecked task</li>
+                            <li>Spawns fresh agent with that task</li>
+                            <li>Agent completes task and commits</li>
+                            <li>Marks task as done in file</li>
+                            <li>Messages progress to you</li>
+                            <li>Repeats until all tasks done</li>
+                        </ol>
+
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>Break tasks into small, testable chunks</li>
+                            <li>Put tests after implementation tasks</li>
+                            <li>Monitor progress messages</li>
+                            <li>Review commits in the morning</li>
+                            <li>Use <code>/stop-ralph</code> to halt if needed</li>
+                        </ul>
+
+                        <h3>When to Use Ralph</h3>
+                        <ul>
+                            <li>Multi-step feature implementation</li>
+                            <li>Refactoring large codebases</li>
+                            <li>Running test suites overnight</li>
+                            <li>Data migration scripts</li>
+                            <li>Documentation generation</li>
+                        </ul>
+                    </div>
+                    <div class="guide-footer">
+                        <a href="#" class="guide-link">Ralph source code →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>CLAUDE SKILLS</h4>
+                    <p>Modular intelligence for autonomous workflows</p>
+                </div>
+                <div class="footer-col">
+                    <h4>LINKS</h4>
+                    <a href="https://github.com/ziggythebot">GitHub</a>
+                    <a href="https://t.me/+8qJbqxzBQAZkYTNk">Telegram Community</a>
+                    <a href="https://code.claude.com/docs">Claude Code Docs</a>
+                </div>
+                <div class="footer-col">
+                    <h4>RESOURCES</h4>
+                    <a href="index.html#marketplace">Skill Marketplace</a>
+                    <a href="guides.html">Guides & Tutorials</a>
+                    <a href="how-it-works.html">How It Works</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>Built with Claude Skills • MIT License</span>
+                <span>GhostClaw © 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

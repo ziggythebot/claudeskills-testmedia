@@ -1,386 +1,320 @@
-<html lang="en" vid="0"><head vid="1">
-    <meta charset="UTF-8" vid="2">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
-    <title vid="4">Claude Skills Framework</title>
-    
-    <style vid="5">
-        
-        :root {
-            --c-black: #000000;
-            --c-red: #E31A22;
-            --c-white: #FFFFFF;
-            --c-grid: rgba(227, 26, 34, 0.15);
-            --c-dark-red: #4A0505;
-
-            --font-display: 'Impact', 'Inter Black', 'Arial Black', sans-serif;
-            --font-mono: 'Space Mono', 'Courier New', monospace;
-            --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-            --tilt: -6deg;
-            --border-heavy: 8px solid var(--c-white);
-            --border-red: 12px solid var(--c-red);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            background-color: var(--c-black);
-            color: var(--c-white);
-            font-family: var(--font-sans);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-            
-            background-image: 
-                linear-gradient(var(--c-grid) 1px, transparent 1px),
-                linear-gradient(90deg, var(--c-grid) 1px, transparent 1px);
-            background-size: 5vw 5vw;
-            background-position: center center;
-        }
-
-        
-        .sys-meta {
-            position: fixed;
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--c-red);
-            pointer-events: none;
-            z-index: 100;
-        }
-        .sys-meta.top-left { top: 1.5vw; left: 1.5vw; }
-        .sys-meta.top-right { top: 1.5vw; right: 1.5vw; text-align: right; }
-        .sys-meta.bottom-left { bottom: 1.5vw; left: 1.5vw; }
-        .sys-meta.bottom-right { bottom: 1.5vw; right: 1.5vw; text-align: right; }
-        
-        .sys-meta span { display: block; margin-bottom: 2px; }
-        .blink { animation: blink 1s step-end infinite; }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        
-        .hero-container {
-            flex: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 5vw;
-            position: relative;
-            gap: 4vw;
-            align-items: center;
-        }
-
-        
-        .content-zone {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            z-index: 10;
-        }
-
-        .headline-group {
-            position: relative;
-        }
-
-        .eyebrow {
-            font-family: var(--font-mono);
-            color: var(--c-red);
-            font-size: 0.875rem;
-            letter-spacing: 0.2em;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .eyebrow::before {
-            content: '';
-            width: 20px;
-            height: 4px;
-            background: var(--c-red);
-        }
-
-        h1 {
-            font-family: var(--font-display);
-            font-size: clamp(4rem, 8vw, 9rem);
-            line-height: 0.85;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-            margin: 0;
-            color: var(--c-white);
-            
-            text-shadow: 
-                4px 4px 0 var(--c-red),
-                8px 8px 0 var(--c-dark-red);
-        }
-
-        .h1-line-2 {
-            display: block;
-            color: var(--c-black);
-            -webkit-text-stroke: 3px var(--c-white);
-            text-shadow: 
-                4px 4px 0 var(--c-red),
-                8px 8px 0 var(--c-dark-red);
-            margin-left: 2vw; 
-        }
-
-        p.subhead {
-            font-size: clamp(1rem, 1.2vw, 1.5rem);
-            line-height: 1.5;
-            max-width: 80%;
-            color: #CCCCCC;
-            font-weight: 500;
-            border-left: 4px solid var(--c-red);
-            padding-left: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        
-        .action-group {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 1rem 2rem;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.1s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transform: skewX(-8deg); 
-        }
-
-        .btn-primary {
-            background-color: var(--c-red);
-            color: var(--c-white);
-            border: 4px solid var(--c-white);
-            box-shadow: 
-                6px 6px 0 var(--c-black),
-                10px 10px 0 var(--c-white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--c-white);
-            color: var(--c-red);
-            border-color: var(--c-red);
-        }
-
-        .btn-primary:active {
-            transform: skewX(-8deg) translate(4px, 4px);
-            box-shadow: 
-                2px 2px 0 var(--c-black),
-                6px 6px 0 var(--c-white);
-        }
-
-        .btn-secondary {
-            background-color: var(--c-black);
-            color: var(--c-white);
-            border: 4px solid var(--c-red);
-            box-shadow: 4px 4px 0 var(--c-red);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--c-red);
-        }
-
-        .btn-secondary:active {
-            transform: skewX(-8deg) translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--c-red);
-        }
-
-        .btn span {
-            transform: skewX(8deg); 
-            display: block;
-        }
-
-        
-        .graphic-zone {
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            perspective: 1000px;
-        }
-
-        
-        .module-construct {
-            position: relative;
-            width: clamp(250px, 30vw, 500px);
-            aspect-ratio: 1;
-            transform: rotateZ(var(--tilt));
-            transform-style: preserve-3d;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: rotateZ(var(--tilt)) translateY(0); }
-            50% { transform: rotateZ(var(--tilt)) translateY(-20px); }
-        }
-
-        
-        
-        .module-layer-red {
-            position: absolute;
-            inset: 0;
-            background-color: var(--c-red);
-            clip-path: polygon(10% 0, 100% 8%, 92% 100%, 0 92%);
-            box-shadow: -15px 15px 0 var(--c-dark-red); 
-            border: 2px solid #000; 
-        }
-
-        
-        .module-layer-white {
-            position: absolute;
-            inset: 8%; 
-            background-color: var(--c-white);
-            clip-path: polygon(8% 0, 100% 5%, 95% 100%, 0 95%);
-        }
-
-        
-        .module-layer-inner-red {
-            position: absolute;
-            inset: 15%; 
-            background-color: var(--c-red);
-            clip-path: polygon(0 0, 60% 10%, 100% 50%, 80% 100%, 10% 90%);
-        }
-
-        
-        .module-layer-core {
-            position: absolute;
-            inset: 22%; 
-            background-color: var(--c-black);
-            clip-path: polygon(0 0, 60% 10%, 100% 50%, 80% 100%, 10% 90%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            
-            background-image: 
-                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        
-        .module-core-accent {
-            width: 20px;
-            height: 20px;
-            background-color: var(--c-white);
-            transform: rotateZ(45deg);
-        }
-
-        
-        .crosshair {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            pointer-events: none;
-        }
-        .crosshair::before, .crosshair::after {
-            content: '';
-            position: absolute;
-            background: var(--c-red);
-        }
-        .crosshair::before { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
-        .crosshair::after { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
-        
-        .ch-1 { top: 10%; left: 10%; }
-        .ch-2 { bottom: 10%; right: 10%; }
-
-        
-        @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 6vw;
-                text-align: center;
-            }
-            .content-zone {
-                align-items: center;
-            }
-            .eyebrow { justify-content: center; }
-            .h1-line-2 { margin-left: 0; }
-            p.subhead { border-left: none; padding-left: 0; border-top: 4px solid var(--c-red); padding-top: 1rem; }
-            .action-group { justify-content: center; }
-            .graphic-zone { grid-row: 1; min-height: 40vh; }
-        }
-    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Skills - Autonomous AI Workflows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body vid="6">
-
-    
-    <div class="sys-meta top-left" vid="7">
-        <span vid="8">SYS.FRAMEWORK // V.4.0.2</span>
-        <span vid="9">AUTH: REQUIRED</span>
+<body>
+    <!-- System metadata overlay -->
+    <div class="sys-meta top-left">
+        <span>MODULAR_INTELLIGENCE</span>
+        <span class="blink">● ACTIVE</span>
     </div>
-    <div class="sys-meta top-right" vid="10">
-        <span vid="11">LATENCY: <span class="blink" vid="12">12ms</span></span>
-        <span vid="13">NODE: PRIME_ALPHA</span>
-    </div>
-    <div class="sys-meta bottom-left" vid="14">
-        <span vid="15">[ ENGAGE PROTOCOL ]</span>
-        <span vid="16">MEM: ALLOCATED</span>
-    </div>
-    <div class="sys-meta bottom-right" vid="17">
-        <span vid="18">COORD: 34.0522° N, 118.2437° W</span>
-        <span vid="19">STATUS: ONLINE</span>
+    <div class="sys-meta top-right">
+        <span>v1.0.0</span>
+        <span>GHOSTCLAW</span>
     </div>
 
-    <main class="hero-container" vid="20">
-        
-        
-        <section class="content-zone" vid="21">
-            <div class="headline-group" vid="22">
-                <div class="eyebrow" vid="23">MODULAR INTELLIGENCE</div>
-                <h1 vid="24">
-                    <span class="h1-line-1" vid="25">Claude</span>
-                    <span class="h1-line-2" vid="26">Skills</span>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">CLAUDE SKILLS</div>
+            <nav>
+                <a href="#marketplace">Marketplace</a>
+                <a href="#guides">Guides</a>
+                <a href="#docs">Docs</a>
+                <a href="https://github.com/ziggythebot" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="eyebrow">— MODULAR INTELLIGENCE</div>
+                <h1>
+                    <span>BUILD IN MINUTES,</span>
+                    <span class="outline">NOT HOURS</span>
                 </h1>
-                <p class="subhead" vid="27">
-                    Equip, configure, and deploy specialized capabilities. A highly structured framework to extend reasoning and execution.
-                </p>
-            </div>
-
-            <div class="action-group" vid="28">
-                <a href="#" class="btn btn-primary" vid="29">
-                    <span vid="30">Initialize Skills</span>
-                </a>
-                <a href="#" class="btn btn-secondary" vid="31">
-                    <span vid="32">System Docs</span>
-                </a>
-            </div>
-        </section>
-
-        
-        <section class="graphic-zone" vid="33">
-            <div class="crosshair ch-1" vid="34"></div>
-            <div class="crosshair ch-2" vid="35"></div>
-            
-            <div class="module-construct" vid="36">
-                
-                <div class="module-layer-red" vid="37"></div>
-                <div class="module-layer-white" vid="38"></div>
-                <div class="module-layer-inner-red" vid="39"></div>
-                <div class="module-layer-core" vid="40">
-                    <div class="module-core-accent" vid="41"></div>
+                <p class="subhead">Claude Skills automates your entire workflow — from code to deployment. Equip, configure, and deploy specialized capabilities.</p>
+                <div class="action-group">
+                    <a href="#marketplace" class="btn btn-primary">Browse Skills</a>
+                    <a href="#getting-started" class="btn btn-secondary">Get Started</a>
                 </div>
             </div>
-        </section>
+            <div class="hero-visual">
+                <div class="code-block">
+                    <div class="code-header">$ ghostclaw</div>
+                    <div class="code-line"><span class="prompt">></span> /setup-ghostclaw</div>
+                    <div class="code-line"><span class="comment">// Building AI personality...</span></div>
+                    <div class="code-line"><span class="success">✓</span> GhostClaw initialized</div>
+                    <div class="code-line"><span class="prompt">></span> /add-voice-transcription</div>
+                    <div class="code-line"><span class="success">✓</span> Voice transcription active</div>
+                    <div class="code-line"><span class="prompt">></span> /run-ralph tasks.md</div>
+                    <div class="code-line"><span class="comment">// Autonomous loop started...</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </main>
+    <!-- Featured Skills -->
+    <section id="marketplace" class="marketplace">
+        <div class="container">
+            <div class="section-header">
+                <h2>FEATURED SKILLS</h2>
+                <div class="section-meta">Curated picks · Updated weekly</div>
+            </div>
 
+            <div class="skills-grid featured-grid">
+                <div class="skill-card featured">
+                    <div class="skill-icon">🎯</div>
+                    <h3 class="skill-name">SETUP-GHOSTCLAW</h3>
+                    <p class="skill-desc">Build your AI personality with guided setup</p>
+                    <div class="skill-meta">
+                        <span class="rating">4.9★ • 2.1K</span>
+                        <span class="category">CORE</span>
+                    </div>
+                </div>
 
-</body></html>
+                <div class="skill-card featured">
+                    <div class="skill-icon">🤖</div>
+                    <h3 class="skill-name">RUN-RALPH</h3>
+                    <p class="skill-desc">Autonomous multi-task loop with commits</p>
+                    <div class="skill-meta">
+                        <span class="rating">4.8★ • 1.5K</span>
+                        <span class="category">AUTO</span>
+                    </div>
+                </div>
+
+                <div class="skill-card featured">
+                    <div class="skill-icon">🎤</div>
+                    <h3 class="skill-name">ADD-VOICE-TRANSCRIPTION</h3>
+                    <p class="skill-desc">ElevenLabs voice note transcription</p>
+                    <div class="skill-meta">
+                        <span class="rating">4.7★ • 892</span>
+                        <span class="category">INTEGRATION</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <!-- Channels -->
+            <div class="category-section">
+                <div class="section-header">
+                    <h2>CHANNELS & INTEGRATION</h2>
+                    <a href="#" class="view-all">View all →</a>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">📨</div>
+                        <h3 class="skill-name">ADD-SLACK</h3>
+                        <p class="skill-desc">Connect to Slack workspaces</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.6★ • 456</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">💬</div>
+                        <h3 class="skill-name">ADD-TELEGRAM</h3>
+                        <p class="skill-desc">Telegram bot integration</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.7★ • 823</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">📧</div>
+                        <h3 class="skill-name">ADD-GMAIL-AGENT</h3>
+                        <p class="skill-desc">Read, search, send emails</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.5★ • 612</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automation -->
+            <div class="category-section">
+                <div class="section-header">
+                    <h2>AUTOMATION & SCHEDULING</h2>
+                    <a href="#" class="view-all">View all →</a>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">⏰</div>
+                        <h3 class="skill-name">ADD-MORNING-BRIEFING</h3>
+                        <p class="skill-desc">Daily/weekly scheduled updates</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.8★ • 1.1K</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">💓</div>
+                        <h3 class="skill-name">ADD-HEARTBEAT</h3>
+                        <p class="skill-desc">Periodic health check system</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.6★ • 723</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🔄</div>
+                        <h3 class="skill-name">UPDATE-GHOSTCLAW</h3>
+                        <p class="skill-desc">Safe update with backups</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.9★ • 1.8K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content & Marketing -->
+            <div class="category-section">
+                <div class="section-header">
+                    <h2>CONTENT & MARKETING</h2>
+                    <a href="#" class="view-all">View all →</a>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">📝</div>
+                        <h3 class="skill-name">COPYWRITING</h3>
+                        <p class="skill-desc">Marketing copy for any page</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.7★ • 945</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">🎬</div>
+                        <h3 class="skill-name">VARIANT-PIPELINE</h3>
+                        <p class="skill-desc">Design → Website → TikTok</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.8★ • 567</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">📱</div>
+                        <h3 class="skill-name">SOCIAL-CONTENT</h3>
+                        <p class="skill-desc">Posts for all platforms</p>
+                        <div class="skill-meta">
+                            <span class="rating">4.6★ • 834</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section id="getting-started" class="getting-started">
+        <div class="container">
+            <div class="section-header">
+                <h2>GET STARTED IN 3 STEPS</h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Install GhostClaw</h3>
+                    <div class="code-snippet">
+                        <code>git clone https://github.com/your/ghostclaw.git<br>cd ghostclaw<br>npm install</code>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Run Setup Skill</h3>
+                    <div class="code-snippet">
+                        <code>/setup-ghostclaw</code>
+                    </div>
+                    <p>Guided personality building, channel setup, authentication</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Add Skills</h3>
+                    <div class="code-snippet">
+                        <code>/add-voice-transcription<br>/add-morning-briefing<br>/run-ralph tasks.md</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="guides" class="articles">
+        <div class="container">
+            <div class="section-header">
+                <h2>LEARN</h2>
+                <a href="#" class="view-all">All articles →</a>
+            </div>
+
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-meta">TUTORIAL</div>
+                    <h3>How Claude Skills Work</h3>
+                    <p>Skills are modular capabilities you can add to Claude. Each skill has a prompt.md that teaches Claude new abilities.</p>
+                    <a href="#" class="article-link">Read more →</a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-meta">GUIDE</div>
+                    <h3>Creating Your First Skill</h3>
+                    <p>Step-by-step guide to building a custom skill — from folder structure to testing and deployment.</p>
+                    <a href="#" class="article-link">Read more →</a>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-meta">CASE STUDY</div>
+                    <h3>Automating with Ralph</h3>
+                    <p>How to use the Ralph loop for overnight automation — task parsing, commits, and error handling.</p>
+                    <a href="#" class="article-link">Read more →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>CLAUDE SKILLS</h4>
+                    <p>Modular intelligence for autonomous workflows</p>
+                </div>
+                <div class="footer-col">
+                    <h4>LINKS</h4>
+                    <a href="https://github.com/ziggythebot">GitHub</a>
+                    <a href="https://t.me/+8qJbqxzBQAZkYTNk">Telegram Community</a>
+                    <a href="#docs">Documentation</a>
+                </div>
+                <div class="footer-col">
+                    <h4>RESOURCES</h4>
+                    <a href="#marketplace">Skill Marketplace</a>
+                    <a href="#guides">Guides & Tutorials</a>
+                    <a href="https://code.claude.com/docs/en/skills">Claude Code Docs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>Built with Claude Skills • MIT License</span>
+                <span>GhostClaw © 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

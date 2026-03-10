@@ -546,3 +546,357 @@ h2 {
         grid-template-columns: 1fr;
     }
 }
+
+/* Page hero */
+.page-hero {
+    padding: 6rem 0 4rem;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-hero h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+}
+
+/* Guides page */
+.guides-content {
+    padding: 4rem 0;
+}
+
+.guides-grid-full {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.guide-full {
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    padding: 3rem;
+}
+
+.guide-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--c-red);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.read-time {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.guide-full h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.guide-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: var(--c-white);
+}
+
+.guide-body p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.guide-body ul, .guide-body ol {
+    margin: 1.5rem 0 1.5rem 2rem;
+    line-height: 1.8;
+}
+
+.guide-body li {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.guide-body code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2em 0.5em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guide-footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guide-link {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--c-white);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.guide-link:hover {
+    color: var(--c-red);
+}
+
+/* How It Works page */
+.how-it-works-content {
+    padding: 4rem 0;
+}
+
+.concept-section, .architecture-section, .skill-anatomy-section,
+.execution-flow-section, .tools-section, .examples-section, .get-started-section {
+    margin-bottom: 5rem;
+}
+
+.concept-section h2, .architecture-section h2, .skill-anatomy-section h2,
+.execution-flow-section h2, .tools-section h2, .examples-section h2, .get-started-section h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.concept-card {
+    border: 1.5px solid var(--c-red);
+    padding: 2.5rem;
+}
+
+.concept-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--c-red);
+    margin-bottom: 1.5rem;
+}
+
+.concept-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.concept-card p, .concept-card code {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.concept-card code {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2em 0.5em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.architecture-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 3rem 0 1.5rem;
+}
+
+.skill-anatomy-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 3rem 0 1.5rem;
+}
+
+/* Flow steps */
+.flow-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.flow-step {
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.flow-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.flow-step h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.flow-step p, .flow-step code {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+}
+
+.flow-step code {
+    font-family: var(--font-mono);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2em 0.5em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    color: var(--c-red);
+}
+
+/* Tools grid */
+.tools-section > p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.tool-card {
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+}
+
+.tool-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.tool-card ul {
+    list-style: none;
+    margin: 0;
+}
+
+.tool-card li {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.tool-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--c-red);
+}
+
+/* Examples */
+.example-card {
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.example-card h3 {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--c-red);
+    margin-bottom: 1rem;
+}
+
+.example-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.example-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* CTA grid */
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.cta-card {
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    padding: 2.5rem;
+    text-decoration: none;
+    color: var(--c-white);
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-card:hover {
+    border-color: var(--c-red);
+    background: rgba(227, 26, 34, 0.05);
+}
+
+.cta-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cta-card p {
+    font-size: 0.9375rem;
+    opacity: 0.8;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.cta-arrow {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    color: var(--c-red);
+    margin-top: 1rem;
+}
+
+nav a.active {
+    color: var(--c-red);
+}
+
+/* Responsive for new pages */
+@media (max-width: 1024px) {
+    .concept-grid, .tools-grid, .cta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flow-step {
+        max-width: 100%;
+    }
+}
