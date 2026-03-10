@@ -2,7 +2,7 @@ import { Composition } from 'remotion';
 import { ExplosiveIntro } from './ExplosiveIntro';
 import { MinimalBrutalist } from './MinimalBrutalist';
 import { GlitchReveal } from './GlitchReveal';
-import { Terminal Style } from './TerminalStyle';
+import { TerminalStyle } from './TerminalStyle';
 import { SkillShowcase } from './SkillShowcase';
 
 export const RemotionRoot: React.FC = () => {
