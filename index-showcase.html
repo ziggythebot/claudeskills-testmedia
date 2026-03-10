@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Skills - Design Variants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sys-meta top-left">
+        <span>VARIANT_SHOWCASE</span>
+        <span class="blink">● ACTIVE</span>
+    </div>
+    <div class="sys-meta top-right">
+        <span>v1.0.0</span>
+        <span>DESIGN_VARIANTS</span>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content" style="max-width: 100%; text-align: center;">
+                <div class="eyebrow" style="justify-content: center;">— VARIANT SHOWCASE</div>
+                <h1 style="text-align: center;">
+                    <span>CLAUDE SKILLS</span>
+                    <span class="outline">DESIGN VARIANTS</span>
+                </h1>
+                <p class="subhead" style="max-width: 100%; border-left: none; padding-left: 0; text-align: center;">
+                    Demonstrating the Variant → Website → TikTok pipeline with two approaches
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="marketplace">
+        <div class="container">
+            <div class="section-header">
+                <h2>CHOOSE YOUR VARIANT</h2>
+            </div>
+
+            <div class="skills-grid" style="grid-template-columns: repeat(2, 1fr); gap: 3rem;">
+                <!-- Strict Preservation Variant -->
+                <a href="variant-export.html" class="skill-card featured" style="text-decoration: none; padding: 3rem;">
+                    <div class="skill-icon" style="font-size: 4rem;">🎯</div>
+                    <h3 class="skill-name" style="font-size: 1.5rem; margin-bottom: 1.5rem;">STRICT PRESERVATION</h3>
+                    <p class="skill-desc" style="margin-bottom: 2rem;">
+                        Pixel-perfect copy of Variant export. Preserves all design details:
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 2rem 0; text-align: left;">
+                        <li style="margin-bottom: 0.75rem;">✓ Skewed buttons (transform: skewX(-8deg))</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Heavy drop shadows (4px 4px 0, 8px 8px 0)</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Impact font, text-stroke outlines</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Floating geometric shapes with clip-paths</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Crosshairs, grid overlays</li>
+                    </ul>
+                    <div class="skill-meta" style="border-top-color: currentColor;">
+                        <span class="category">VARIANT-WORKFLOW</span>
+                        <span class="rating">Single page</span>
+                    </div>
+                </a>
+
+                <!-- LLM Simplified Multi-Page -->
+                <a href="index-llm.html" class="skill-card featured" style="text-decoration: none; padding: 3rem;">
+                    <div class="skill-icon" style="font-size: 4rem;">🌐</div>
+                    <h3 class="skill-name" style="font-size: 1.5rem; margin-bottom: 1.5rem;">MULTI-PAGE SITE</h3>
+                    <p class="skill-desc" style="margin-bottom: 2rem;">
+                        Functional marketplace with content and navigation:
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 2rem 0; text-align: left;">
+                        <li style="margin-bottom: 0.75rem;">✓ Homepage with skills marketplace</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Guides page (3 full tutorials)</li>
+                        <li style="margin-bottom: 0.75rem;">✓ How It Works (architecture, tools)</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Category grids, featured skills</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Simplified design (easier to read)</li>
+                    </ul>
+                    <div class="skill-meta" style="border-top-color: currentColor;">
+                        <span class="category">FUNCTIONAL</span>
+                        <span class="rating">3 pages</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="getting-started" style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>ABOUT THIS DEMO</h2>
+            </div>
+
+            <div class="step-card" style="max-width: 900px; margin: 0 auto;">
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem;">Variant → Website → TikTok Pipeline</h3>
+                <p style="font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                    This demonstrates the complete workflow from Variant.com design exports through website implementation to TikTok video content.
+                </p>
+
+                <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin: 2rem 0 1rem;">Two Approaches:</h4>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <strong style="color: var(--c-red);">Strict Preservation:</strong> Follows variant-workflow rules — copy ALL styles exactly from Variant export, only change text content. No simplification, rounding, or cleanup.
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <strong style="color: var(--c-red);">Multi-Page Site:</strong> Builds a functional marketplace with navigation, multiple pages, and readable content. Design is simplified for usability.
+                </div>
+
+                <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin: 2rem 0 1rem;">Complete Pipeline Includes:</h4>
+                <ul style="margin-left: 2rem; line-height: 1.8;">
+                    <li>Variant JSON exports with 3 design variations</li>
+                    <li>Next.js components with A/B testing</li>
+                    <li>TikTok scripts (Hook/Problem/Solution/Proof/CTA)</li>
+                    <li>Remotion video compositions (30s, 9:16 format)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>CLAUDE SKILLS</h4>
+                    <p>Variant → Website → TikTok pipeline demonstration</p>
+                </div>
+                <div class="footer-col">
+                    <h4>VARIANTS</h4>
+                    <a href="variant-export.html">Strict Preservation</a>
+                    <a href="index-llm.html">Multi-Page Site</a>
+                    <a href="guides.html">Guides</a>
+                    <a href="how-it-works.html">How It Works</a>
+                </div>
+                <div class="footer-col">
+                    <h4>LINKS</h4>
+                    <a href="https://github.com/ziggythebot/claudeskills-testmedia">GitHub Repo</a>
+                    <a href="variant-export.json">Variant JSON Export</a>
+                    <a href="README.md">Pipeline Docs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>Built with Claude Skills • Variant Workflow</span>
+                <span>GhostClaw © 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
