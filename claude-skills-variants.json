@@ -1,0 +1,114 @@
+{
+  "project": "Claude Skills Hero Section",
+  "created": "2026-03-10",
+  "variants": [
+    {
+      "id": "variant-1-speed",
+      "name": "Speed-First",
+      "components": {
+        "headline": {
+          "text": "Build in minutes, not hours",
+          "fontSize": "48px",
+          "fontWeight": "700",
+          "color": "white"
+        },
+        "subheadline": {
+          "text": "Claude Skills automates your entire workflow — from code to deployment",
+          "fontSize": "24px",
+          "fontWeight": "400",
+          "color": "rgba(255,255,255,0.9)"
+        },
+        "cta": {
+          "text": "Watch Tutorial",
+          "background": "white",
+          "color": "#667eea"
+        },
+        "secondaryCta": {
+          "text": "Browse Skills",
+          "background": "transparent",
+          "color": "white",
+          "border": "2px solid white"
+        },
+        "background": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+      },
+      "metadata": {
+        "focus": "Speed and efficiency",
+        "tone": "urgent, practical",
+        "ideal_for": "Developers who want fast results",
+        "tiktok_hook": "Stop writing boilerplate"
+      }
+    },
+    {
+      "id": "variant-2-power",
+      "name": "Power-First",
+      "components": {
+        "headline": {
+          "text": "Autonomous coding that actually works",
+          "fontSize": "48px",
+          "fontWeight": "700",
+          "color": "white"
+        },
+        "subheadline": {
+          "text": "Claude Skills runs multi-step workflows without supervision — write tests, deploy, debug, and iterate",
+          "fontSize": "24px",
+          "fontWeight": "400",
+          "color": "rgba(255,255,255,0.9)"
+        },
+        "cta": {
+          "text": "See What It Can Do",
+          "background": "#00ff88",
+          "color": "#000"
+        },
+        "secondaryCta": {
+          "text": "Advanced Features",
+          "background": "transparent",
+          "color": "#00ff88",
+          "border": "2px solid #00ff88"
+        },
+        "background": "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)"
+      },
+      "metadata": {
+        "focus": "Power and capabilities",
+        "tone": "technical, impressive",
+        "ideal_for": "Advanced developers, power users",
+        "tiktok_hook": "This AI can actually code"
+      }
+    },
+    {
+      "id": "variant-3-simplicity",
+      "name": "Simplicity-First",
+      "components": {
+        "headline": {
+          "text": "Just describe it. Claude builds it.",
+          "fontSize": "48px",
+          "fontWeight": "700",
+          "color": "white"
+        },
+        "subheadline": {
+          "text": "No prompting tricks. No config files. Just tell Claude what you need in plain English.",
+          "fontSize": "24px",
+          "fontWeight": "400",
+          "color": "rgba(255,255,255,0.9)"
+        },
+        "cta": {
+          "text": "Try It Free",
+          "background": "#ff6b6b",
+          "color": "white"
+        },
+        "secondaryCta": {
+          "text": "Watch Demo",
+          "background": "transparent",
+          "color": "white",
+          "border": "2px solid white"
+        },
+        "background": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+      },
+      "metadata": {
+        "focus": "Ease of use",
+        "tone": "friendly, approachable, beginner-friendly",
+        "ideal_for": "Non-technical users, beginners",
+        "tiktok_hook": "You don't need to be a developer"
+      }
+    }
+  ]
+}

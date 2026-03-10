@@ -1,0 +1,105 @@
+{
+  "project": "Bureau Bonanza Hero Section",
+  "created": "2026-03-10",
+  "variants": [
+    {
+      "id": "variant-1-value",
+      "name": "Value-First",
+      "components": {
+        "headline": {
+          "text": "Design that drives revenue",
+          "fontSize": "56px",
+          "fontWeight": "700",
+          "color": "#1a1a1a"
+        },
+        "subheadline": {
+          "text": "We've helped 50+ startups raise £200M+ with pitch decks, brand identities, and product design that investors love.",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "color": "#666666"
+        },
+        "cta": {
+          "text": "See our work",
+          "variant": "primary",
+          "href": "/portfolio"
+        },
+        "secondaryCta": {
+          "text": "View case studies",
+          "variant": "secondary",
+          "href": "/case-studies"
+        }
+      },
+      "metadata": {
+        "focus": "ROI and results",
+        "tone": "professional, data-driven",
+        "ideal_for": "B2B, investors, rational buyers"
+      }
+    },
+    {
+      "id": "variant-2-creative",
+      "name": "Creative-First",
+      "components": {
+        "headline": {
+          "text": "Extraordinary design for bold brands",
+          "fontSize": "56px",
+          "fontWeight": "700",
+          "color": "#1a1a1a"
+        },
+        "subheadline": {
+          "text": "We don't do boring. We create striking visual identities that make people stop, stare, and remember your brand forever.",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "color": "#666666"
+        },
+        "cta": {
+          "text": "Let's create together",
+          "variant": "primary",
+          "href": "/contact"
+        },
+        "secondaryCta": {
+          "text": "Explore our work",
+          "variant": "secondary",
+          "href": "/portfolio"
+        }
+      },
+      "metadata": {
+        "focus": "Aesthetics and creativity",
+        "tone": "bold, artistic, emotional",
+        "ideal_for": "Creative brands, design-forward companies"
+      }
+    },
+    {
+      "id": "variant-3-speed",
+      "name": "Speed-First",
+      "components": {
+        "headline": {
+          "text": "Launch-ready design in weeks, not months",
+          "fontSize": "56px",
+          "fontWeight": "700",
+          "color": "#1a1a1a"
+        },
+        "subheadline": {
+          "text": "From kickoff to launch in 3-4 weeks. Get your pitch deck, brand identity, or product design without the agency wait times.",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "color": "#666666"
+        },
+        "cta": {
+          "text": "Start your project",
+          "variant": "primary",
+          "href": "/start"
+        },
+        "secondaryCta": {
+          "text": "See our timeline",
+          "variant": "secondary",
+          "href": "/process"
+        }
+      },
+      "metadata": {
+        "focus": "Speed and efficiency",
+        "tone": "urgent, practical, solution-focused",
+        "ideal_for": "Startups with deadlines, product launches"
+      }
+    }
+  ]
+}
