@@ -1,13 +1,10 @@
-<!-- STRICT VARIANT PRESERVATION: All styles copied exactly from Variant export -->
-<!-- Only changed: content (text), kept all CSS/structure identical -->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Skills Framework</title>
-
-    <style>
-        /* COPIED EXACTLY FROM VARIANT EXPORT - DO NOT MODIFY */
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">Claude Skills Framework</title>
+    
+    <style vid="5">
+        
         :root {
             --c-black: #000000;
             --c-red: #E31A22;
@@ -39,15 +36,15 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-
-            background-image:
+            
+            background-image: 
                 linear-gradient(var(--c-grid) 1px, transparent 1px),
                 linear-gradient(90deg, var(--c-grid) 1px, transparent 1px);
             background-size: 5vw 5vw;
             background-position: center center;
         }
 
-        /* System metadata overlay */
+        
         .sys-meta {
             position: fixed;
             font-family: var(--font-mono);
@@ -62,12 +59,12 @@
         .sys-meta.top-right { top: 1.5vw; right: 1.5vw; text-align: right; }
         .sys-meta.bottom-left { bottom: 1.5vw; left: 1.5vw; }
         .sys-meta.bottom-right { bottom: 1.5vw; right: 1.5vw; text-align: right; }
-
+        
         .sys-meta span { display: block; margin-bottom: 2px; }
         .blink { animation: blink 1s step-end infinite; }
         @keyframes blink { 50% { opacity: 0; } }
 
-        /* Hero container */
+        
         .hero-container {
             flex: 1;
             display: grid;
@@ -78,7 +75,7 @@
             align-items: center;
         }
 
-        /* Content zone */
+        
         .content-zone {
             display: flex;
             flex-direction: column;
@@ -115,8 +112,8 @@
             letter-spacing: -0.02em;
             margin: 0;
             color: var(--c-white);
-
-            text-shadow:
+            
+            text-shadow: 
                 4px 4px 0 var(--c-red),
                 8px 8px 0 var(--c-dark-red);
         }
@@ -125,10 +122,10 @@
             display: block;
             color: var(--c-black);
             -webkit-text-stroke: 3px var(--c-white);
-            text-shadow:
+            text-shadow: 
                 4px 4px 0 var(--c-red),
                 8px 8px 0 var(--c-dark-red);
-            margin-left: 2vw;
+            margin-left: 2vw; 
         }
 
         p.subhead {
@@ -142,7 +139,7 @@
             margin-top: 1rem;
         }
 
-        /* Action buttons */
+        
         .action-group {
             display: flex;
             gap: 1.5rem;
@@ -163,14 +160,14 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            transform: skewX(-8deg);
+            transform: skewX(-8deg); 
         }
 
         .btn-primary {
             background-color: var(--c-red);
             color: var(--c-white);
             border: 4px solid var(--c-white);
-            box-shadow:
+            box-shadow: 
                 6px 6px 0 var(--c-black),
                 10px 10px 0 var(--c-white);
         }
@@ -183,7 +180,7 @@
 
         .btn-primary:active {
             transform: skewX(-8deg) translate(4px, 4px);
-            box-shadow:
+            box-shadow: 
                 2px 2px 0 var(--c-black),
                 6px 6px 0 var(--c-white);
         }
@@ -205,11 +202,11 @@
         }
 
         .btn span {
-            transform: skewX(8deg);
+            transform: skewX(8deg); 
             display: block;
         }
 
-        /* Graphic zone */
+        
         .graphic-zone {
             position: relative;
             height: 100%;
@@ -219,7 +216,7 @@
             perspective: 1000px;
         }
 
-        /* Module construct (animated geometric shape) */
+        
         .module-construct {
             position: relative;
             width: clamp(250px, 30vw, 500px);
@@ -234,45 +231,51 @@
             50% { transform: rotateZ(var(--tilt)) translateY(-20px); }
         }
 
-        /* Module layers */
+        
+        
         .module-layer-red {
             position: absolute;
             inset: 0;
             background-color: var(--c-red);
             clip-path: polygon(10% 0, 100% 8%, 92% 100%, 0 92%);
-            box-shadow: -15px 15px 0 var(--c-dark-red);
-            border: 2px solid #000;
+            box-shadow: -15px 15px 0 var(--c-dark-red); 
+            border: 2px solid #000; 
         }
 
+        
         .module-layer-white {
             position: absolute;
-            inset: 8%;
+            inset: 8%; 
             background-color: var(--c-white);
             clip-path: polygon(8% 0, 100% 5%, 95% 100%, 0 95%);
         }
 
+        
         .module-layer-inner-red {
             position: absolute;
-            inset: 15%;
+            inset: 15%; 
             background-color: var(--c-red);
             clip-path: polygon(0 0, 60% 10%, 100% 50%, 80% 100%, 10% 90%);
         }
 
+        
         .module-layer-core {
             position: absolute;
-            inset: 22%;
+            inset: 22%; 
             background-color: var(--c-black);
             clip-path: polygon(0 0, 60% 10%, 100% 50%, 80% 100%, 10% 90%);
             display: flex;
             align-items: center;
             justify-content: center;
-
-            background-image:
+            
+            
+            background-image: 
                 linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
             background-size: 20px 20px;
         }
 
+        
         .module-core-accent {
             width: 20px;
             height: 20px;
@@ -280,7 +283,7 @@
             transform: rotateZ(45deg);
         }
 
-        /* Crosshairs */
+        
         .crosshair {
             position: absolute;
             width: 30px;
@@ -294,93 +297,90 @@
         }
         .crosshair::before { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
         .crosshair::after { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
+        
+        .ch-1 { top: 10%; left: 10%; }
+        .ch-2 { bottom: 10%; right: 10%; }
 
-        .crosshair.top-left { top: 10%; left: 10%; }
-        .crosshair.bottom-right { bottom: 10%; right: 10%; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
+        
+        @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 6vw;
+                text-align: center;
             }
-
-            h1 {
-                font-size: clamp(2.5rem, 12vw, 4rem);
+            .content-zone {
+                align-items: center;
             }
-
-            .module-construct {
-                width: clamp(200px, 50vw, 300px);
-            }
+            .eyebrow { justify-content: center; }
+            .h1-line-2 { margin-left: 0; }
+            p.subhead { border-left: none; padding-left: 0; border-top: 4px solid var(--c-red); padding-top: 1rem; }
+            .action-group { justify-content: center; }
+            .graphic-zone { grid-row: 1; min-height: 40vh; }
         }
     </style>
 </head>
+<body vid="6">
 
-<body>
-    <!-- System metadata (copied exactly from Variant) -->
-    <div class="sys-meta top-left">
-        <span>— MODULAR INTELLIGENCE</span>
-        <span class="blink">● ONLINE</span>
+    
+    <div class="sys-meta top-left" vid="7">
+        <span vid="8">SYS.FRAMEWORK // V.4.0.2</span>
+        <span vid="9">AUTH: REQUIRED</span>
+    </div>
+    <div class="sys-meta top-right" vid="10">
+        <span vid="11">LATENCY: <span class="blink" vid="12">12ms</span></span>
+        <span vid="13">NODE: PRIME_ALPHA</span>
+    </div>
+    <div class="sys-meta bottom-left" vid="14">
+        <span vid="15">[ ENGAGE PROTOCOL ]</span>
+        <span vid="16">MEM: ALLOCATED</span>
+    </div>
+    <div class="sys-meta bottom-right" vid="17">
+        <span vid="18">COORD: 34.0522° N, 118.2437° W</span>
+        <span vid="19">STATUS: ONLINE</span>
     </div>
 
-    <div class="sys-meta top-right">
-        <span>v1.0.0</span>
-        <span>GHOSTCLAW // CLAUDE.AI</span>
-    </div>
-
-    <div class="sys-meta bottom-left">
-        <span>RUNTIME: PROTOCOL</span>
-        <span>MODE: SKILLS</span>
-    </div>
-
-    <div class="sys-meta bottom-right">
-        <span>LAST.CHK: [SEQ_ACTIVE]</span>
-        <span>STATUS: ONLINE</span>
-    </div>
-
-    <!-- Hero container (structure copied exactly from Variant) -->
-    <div class="hero-container">
-        <!-- Content zone -->
-        <div class="content-zone">
-            <div class="headline-group">
-                <!-- Only changed: text content -->
-                <div class="eyebrow">MODULAR INTELLIGENCE</div>
-                <h1>
-                    CLAUDE
-                    <span class="h1-line-2">SKILLS</span>
+    <main class="hero-container" vid="20">
+        
+        
+        <section class="content-zone" vid="21">
+            <div class="headline-group" vid="22">
+                <div class="eyebrow" vid="23">MODULAR INTELLIGENCE</div>
+                <h1 vid="24">
+                    <span class="h1-line-1" vid="25">Claude</span>
+                    <span class="h1-line-2" vid="26">Skills</span>
                 </h1>
+                <p class="subhead" vid="27">
+                    Equip, configure, and deploy specialized capabilities. A highly structured framework to extend reasoning and execution.
+                </p>
             </div>
 
-            <p class="subhead">
-                Equip, configure, and deploy specialized capabilities. A highly structured framework to extend reasoning and execution.
-            </p>
-
-            <div class="action-group">
-                <a href="#" class="btn btn-primary">
-                    <span>INITIALIZE SKILLS</span>
+            <div class="action-group" vid="28">
+                <a href="#" class="btn btn-primary" vid="29">
+                    <span vid="30">Initialize Skills</span>
                 </a>
-                <a href="#" class="btn btn-secondary">
-                    <span>SYSTEM DOCS</span>
+                <a href="#" class="btn btn-secondary" vid="31">
+                    <span vid="32">System Docs</span>
                 </a>
             </div>
-        </div>
+        </section>
 
-        <!-- Graphic zone (copied exactly from Variant) -->
-        <div class="graphic-zone">
-            <!-- Crosshairs -->
-            <div class="crosshair top-left"></div>
-            <div class="crosshair bottom-right"></div>
-
-            <!-- Module construct (geometric shape) -->
-            <div class="module-construct">
-                <div class="module-layer-red"></div>
-                <div class="module-layer-white"></div>
-                <div class="module-layer-inner-red"></div>
-                <div class="module-layer-core">
-                    <div class="module-core-accent"></div>
+        
+        <section class="graphic-zone" vid="33">
+            <div class="crosshair ch-1" vid="34"></div>
+            <div class="crosshair ch-2" vid="35"></div>
+            
+            <div class="module-construct" vid="36">
+                
+                <div class="module-layer-red" vid="37"></div>
+                <div class="module-layer-white" vid="38"></div>
+                <div class="module-layer-inner-red" vid="39"></div>
+                <div class="module-layer-core" vid="40">
+                    <div class="module-core-accent" vid="41"></div>
                 </div>
             </div>
-        </div>
-    </div>
-</body>
-</html>
+        </section>
+
+    </main>
+
+
+</body></html>
